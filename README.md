@@ -32,6 +32,10 @@ Chez Obambu, la zone DNS doit pointer vers GitHub Pages :
 @     A      185.199.109.153
 @     A      185.199.110.153
 @     A      185.199.111.153
+@     AAAA   2606:50c0:8000::153
+@     AAAA   2606:50c0:8001::153
+@     AAAA   2606:50c0:8002::153
+@     AAAA   2606:50c0:8003::153
 www   CNAME  VOTRE-UTILISATEUR.github.io
 ```
 
