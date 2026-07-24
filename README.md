@@ -13,7 +13,7 @@ Ce dossier contient un site Internet statique prêt à être mis en ligne.
 
 Vous pouvez pousser le contenu de ce dossier dans un dépôt GitHub, puis connecter ce dépôt à votre hébergeur. Le fichier d'entrée est `index.html`.
 
-Les boutons `Commander` ouvrent actuellement un email vers `contact@rituellecare.com`. Pour les relier à une boutique, remplacez les liens `mailto:` par vos liens Shopify, Stripe ou WooCommerce.
+Les boutons `Commander` ouvrent actuellement un email vers `contact@luneadrink.com`. Pour les relier à une boutique, remplacez les liens `mailto:` par vos liens Shopify, Stripe ou WooCommerce.
 
 ## Domaine personnalisé
 
