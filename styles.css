@@ -413,12 +413,19 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
   border: 1px solid rgba(255, 250, 246, 0.75);
   border-radius: 50%;
-  font-size: 12px;
-  font-weight: 900;
+}
+
+.service-icon img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 .benefit-grid {
@@ -445,65 +452,21 @@ select {
   text-align: center;
 }
 
-.line-icon {
-  position: relative;
+.benefit-icon {
   display: block;
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   margin: 0 auto 22px;
-  color: var(--red-800);
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 14px 24px rgba(107, 11, 10, 0.14);
 }
 
-.line-icon::before,
-.line-icon::after {
-  content: "";
-  position: absolute;
-  inset: 8px;
-  border: 2px solid currentColor;
-}
-
-.line-icon.flower::before {
-  border-radius: 50% 50% 50% 6px;
-  transform: rotate(45deg);
-}
-
-.line-icon.flower::after {
-  border-radius: 50% 6px 50% 50%;
-  transform: rotate(-45deg);
-}
-
-.line-icon.drop::before {
-  border-radius: 70% 70% 70% 0;
-  transform: rotate(45deg);
-}
-
-.line-icon.drop::after {
-  display: none;
-}
-
-.line-icon.bolt::before {
-  width: 22px;
-  height: 42px;
-  border-width: 0 0 0 3px;
-  transform: skew(-22deg) translate(12px, -2px);
-}
-
-.line-icon.bolt::after {
-  width: 18px;
-  height: 18px;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg) translate(22px, 10px);
-}
-
-.line-icon.moon::before {
-  border-radius: 50%;
-}
-
-.line-icon.moon::after {
-  inset: 4px 2px 10px 18px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--cream);
+.benefit-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .benefit-card h3,
