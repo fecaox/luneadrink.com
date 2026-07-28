@@ -967,7 +967,6 @@ select {
 }
 
 .key-points div,
-.study-note,
 .article-cta {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -979,8 +978,7 @@ select {
   background: var(--cream);
 }
 
-.key-points strong,
-.study-note strong {
+.key-points strong {
   display: block;
   color: var(--red-800);
   font-size: 13px;
@@ -1027,12 +1025,6 @@ select {
   gap: 12px;
   margin: 18px 0 0;
   padding-left: 22px;
-}
-
-.study-note {
-  margin: 34px 0;
-  padding: 22px;
-  background: var(--cream);
 }
 
 .reference-list {
@@ -1170,9 +1162,12 @@ select {
 
 .disclaimer {
   grid-column: 1 / -1;
-  padding-top: 28px;
+  max-width: 980px;
+  padding-top: 22px;
   border-top: 1px solid rgba(255, 250, 246, 0.16);
-  font-size: 13px;
+  color: rgba(255, 250, 246, 0.64);
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 @media (max-width: 1060px) {
