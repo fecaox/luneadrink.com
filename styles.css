@@ -110,7 +110,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 34px;
+  gap: 26px;
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
@@ -793,7 +793,8 @@ select {
 
 .link-grid,
 .content-grid,
-.topic-grid {
+.topic-grid,
+.blog-grid {
   display: grid;
   gap: 18px;
   width: min(100%, var(--max));
@@ -801,7 +802,7 @@ select {
 }
 
 .link-grid {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .link-card,
@@ -844,6 +845,55 @@ select {
 .topic-card p {
   margin-top: 12px;
   color: var(--muted);
+}
+
+.blog-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.blog-card {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  min-height: 430px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 246, 0.72);
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.blog-card:hover,
+.blog-card:focus-visible {
+  border-color: var(--red-800);
+  transform: translateY(-1px);
+}
+
+.blog-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.blog-card span {
+  margin: 20px 20px 0;
+  color: var(--sage-dark);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.blog-card h2 {
+  margin: 12px 20px 0;
+  color: var(--red-800);
+  font-size: 18px;
+  line-height: 1.18;
+  text-transform: uppercase;
+}
+
+.blog-card p {
+  margin: 14px 20px 22px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
 .page-hero {
@@ -898,6 +948,50 @@ select {
   margin: 0 auto;
 }
 
+.article-body {
+  font-size: 17px;
+}
+
+.article-meta {
+  color: var(--sage-dark);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.key-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 30px 0 42px;
+}
+
+.key-points div,
+.study-note,
+.article-cta {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.key-points div {
+  min-height: 170px;
+  padding: 20px;
+  background: var(--cream);
+}
+
+.key-points strong,
+.study-note strong {
+  display: block;
+  color: var(--red-800);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.key-points p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
 .article-copy h2 {
   margin-top: 42px;
   color: var(--red-800);
@@ -919,12 +1013,48 @@ select {
   margin-top: 16px;
 }
 
+.article-copy a {
+  color: var(--red-800);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .article-copy ul,
 .article-copy ol {
   display: grid;
   gap: 12px;
   margin: 18px 0 0;
   padding-left: 22px;
+}
+
+.study-note {
+  margin: 34px 0;
+  padding: 22px;
+  background: var(--cream);
+}
+
+.reference-list {
+  font-size: 14px;
+}
+
+.article-cta {
+  margin-top: 42px;
+  padding: 30px;
+  background: var(--red-800);
+}
+
+.article-cta h2,
+.article-cta p {
+  color: var(--white);
+}
+
+.article-cta .button {
+  margin-top: 22px;
+  color: var(--red-800);
+  background: var(--white);
+  border-color: var(--white);
 }
 
 .callout {
@@ -1078,9 +1208,13 @@ select {
   .ingredient-feature img {
     aspect-ratio: 16 / 9;
   }
+
+  .blog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   :root {
     --header: 66px;
   }
@@ -1195,7 +1329,9 @@ select {
   .review-grid,
   .link-grid,
   .content-grid,
-  .topic-grid {
+  .topic-grid,
+  .blog-grid,
+  .key-points {
     grid-template-columns: 1fr;
   }
 
@@ -1211,6 +1347,10 @@ select {
 
   .content-card.wide {
     grid-column: auto;
+  }
+
+  .blog-card {
+    min-height: auto;
   }
 
   .benefit-card {
