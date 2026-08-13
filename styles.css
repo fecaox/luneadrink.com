@@ -1031,6 +1031,13 @@ select {
   margin-top: 0;
 }
 
+.article-copy h3 {
+  margin-top: 28px;
+  color: var(--red-800);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
 .article-copy p,
 .article-copy li {
   color: var(--muted);
