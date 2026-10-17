@@ -33,3 +33,12 @@ test("la date de modification publique correspond au sitemap", () => {
   assert.equal(sitemapEntry, structuredData.dateModified);
   assert.match(article, /Mis à jour le 16 octobre 2026/);
 });
+
+test("Google Analytics reste bloqué tant que le visiteur n’a pas consenti", async () => {
+  const script = await readFile(new URL("./script.js", import.meta.url), "utf8");
+  assert.match(script, /G-WWYLD1FE4S/);
+  assert.match(script, /analytics_storage/);
+  assert.match(script, /googletagmanager\.com\/gtag\/js/);
+  assert.match(script, /localStorage/);
+  assert.match(script, /Gérer les cookies/);
+});
